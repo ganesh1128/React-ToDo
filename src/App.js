@@ -30,6 +30,24 @@ function App() {
     }      
   ])
 
+  // let changeTask = (id) => {
+  //   let taskIndex = list.findIndex((obj) => obj.id === id);
+  //   list[taskIndex].isDone = true;
+  //   setList([...list])
+  // }
+
+  // return (
+  //   <div>
+  //     <ul>
+  //       {
+  //         list.map((ele) => {
+  //           return <li style={{textDecoration: ele.isDone ? "line-through" : " "}} >{ele.taskName} 
+  //            <button onClick={() => {changeTask(ele.id)}}>Done</button> </li>
+  //         })
+  //       }
+  //     </ul>
+  //   </div>
+  // );
 
   let changeStatus = (id,checkStatus) => {
     let taskIndex = list.findIndex((obj) => obj.id === id);
@@ -44,7 +62,7 @@ function App() {
       {
         list.map((ele) => {
           return <li type="none" style={{textDecoration: ele.isDone ? "line-through" : " "}}><input type="checkbox"
-          onChange={(e) => {changeStatus(ele.id, e.target.checked)}} /> {ele.taskName} </li>
+          onChange={(e) => {changeStatus(ele.id, e.target.checked)}} /> - {ele.taskName} </li>
           
         })
       }
